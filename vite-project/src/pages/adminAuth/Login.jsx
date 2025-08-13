@@ -28,7 +28,7 @@ export default function LoginPage() {
 
             navigate("/adminDashboard")
 
-            console.log(response.data.status)
+            console.log(response.data)
 
             if (response.data.status) {
                 setadmin(response.data)
