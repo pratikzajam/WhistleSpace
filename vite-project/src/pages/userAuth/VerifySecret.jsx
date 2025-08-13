@@ -137,7 +137,9 @@ export default function SecretKeyPage() {
                         <h2 className="text-2xl font-bold text-gray-900">Enter Secret Key</h2>
                         <p className="text-gray-600 mt-2 text-sm">
                             Please enter your organization's secret key to continue
+                            dummy 
                         </p>
+                        <p>secret key:TPkdZLaf3amFyU5uM6cr</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
