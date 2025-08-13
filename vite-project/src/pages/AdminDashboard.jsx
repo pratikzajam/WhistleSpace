@@ -14,7 +14,7 @@ const AdminDashboard = () => {
 
     let navigate = useNavigate()
 
-    // console.log(admin)
+    console.log(admin)
 
     if (admin) {
         admin = JSON.parse(admin);
