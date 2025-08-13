@@ -16,7 +16,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
+    
       <Routes>
         <Route path="/userlogin" element={<VerifySecret />} />
         <Route path="/login" element={<LoginPage />} />
@@ -25,7 +25,7 @@ function App() {
         <Route path="/adminDashboard" element={<AdminDashboard />} />
         <Route path="/" element={<LandingPage />} />
       </Routes>
-    </BrowserRouter>
+ 
   )
 }
 
