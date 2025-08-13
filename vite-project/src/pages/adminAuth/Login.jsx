@@ -26,12 +26,13 @@ export default function LoginPage() {
 
             toast(response.data.message);
 
-            navigate("/adminDashboard")
+
 
             console.log(response.data)
 
             if (response.data.status) {
                 setadmin(response.data)
+                navigate("/adminDashboard")
             }
 
 
