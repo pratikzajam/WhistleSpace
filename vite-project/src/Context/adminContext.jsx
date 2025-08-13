@@ -14,6 +14,8 @@ export const AdminProvider = ({ children }) => {
 
     let token = admin?.data?.token
 
+    console.log(token)
+
     if (token) {
         try {
             let decodedToken = jwtDecode(token);

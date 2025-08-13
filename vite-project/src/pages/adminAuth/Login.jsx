@@ -9,7 +9,7 @@ export default function LoginPage() {
 
     const { admin, setadmin } = useContext(AdminContext)
 
-    let navigate=useNavigate();
+    let navigate = useNavigate();
 
     const [form, setFormData] = useState({ email: "", password: "" });
 
@@ -27,7 +27,9 @@ export default function LoginPage() {
             toast(response.data.message);
 
             navigate("/adminDashboard")
-           
+
+            console.log(response.data.status)
+
             if (response.data.status) {
                 setadmin(response.data)
             }
@@ -42,7 +44,7 @@ export default function LoginPage() {
 
     return (
         <>
-            <ToastContainer 
+            <ToastContainer
                 position="top-right"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -54,13 +56,13 @@ export default function LoginPage() {
                 pauseOnHover
                 theme="light"
             />
-            
+
             {/* Background with gradient */}
             <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-100 px-4 py-8">
-                
+
                 {/* Login Card */}
                 <div className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md border border-gray-100 backdrop-blur-sm">
-                    
+
                     {/* Header Section */}
                     <div className="text-center mb-8">
                         <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
@@ -73,7 +75,7 @@ export default function LoginPage() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        
+
                         {/* Email Field */}
                         <div className="space-y-2">
                             <label className="block text-sm font-semibold text-gray-700">
@@ -86,7 +88,7 @@ export default function LoginPage() {
                                         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                                     </svg>
                                 </div>
-                                <input 
+                                <input
                                     onChange={(e) => {
                                         setFormData((prev) => ({
                                             ...prev,
@@ -111,7 +113,7 @@ export default function LoginPage() {
                                         <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                                     </svg>
                                 </div>
-                                <input 
+                                <input
                                     onChange={(e) => {
                                         setFormData((prev) => ({
                                             ...prev,
@@ -129,9 +131,9 @@ export default function LoginPage() {
                         <div className="flex items-center justify-between pt-2">
                             <label className="flex items-center space-x-3 cursor-pointer group">
                                 <div className="relative">
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-4 h-4 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 transition-all duration-200" 
+                                    <input
+                                        type="checkbox"
+                                        className="w-4 h-4 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 transition-all duration-200"
                                     />
                                 </div>
                                 <span className="text-sm text-gray-600 group-hover:text-gray-800 transition-colors">Remember me</span>
