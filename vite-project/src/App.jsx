@@ -8,7 +8,7 @@ import VerifySecret from './pages/userAuth/VerifySecret';
 import LoginPage from './pages/adminAuth/Login';
 import UserDashboard from './pages/Dashboard';
 import Signup from './pages/adminAuth/Signup';
-import AdminDashboard from './pages/adminDashboard';
+import AdminDashboard from './pages/AdminDashboard';
 import LandingPage from './pages/LandingPage';
 
 
