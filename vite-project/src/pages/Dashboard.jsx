@@ -27,7 +27,7 @@ const UserDashboard = () => {
   function logOut() {
     Navigate("/");
 
-    localStorage.setItem("user","");
+    localStorage.setItem("user", "");
   }
 
 
@@ -47,7 +47,7 @@ const UserDashboard = () => {
       setMessages("");
     } catch (error) {
       console.log(error);
-       
+      toast(error.data.messages);
     }
   }, [SecretCode, message, userName]);
 
