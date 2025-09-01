@@ -47,7 +47,7 @@ const UserDashboard = () => {
       setMessages("");
     } catch (error) {
       console.log(error);
-        toast(error);
+       
     }
   }, [SecretCode, message, userName]);
 
