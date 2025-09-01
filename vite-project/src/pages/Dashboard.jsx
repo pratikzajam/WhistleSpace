@@ -3,6 +3,7 @@ import { User, MessageSquare, PlusCircle, LogOut, Bell, Search, Heart, MessageCi
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router'
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserDashboard = () => {
 
@@ -30,24 +31,24 @@ const UserDashboard = () => {
     localStorage.setItem("user", "");
   }
 
-
-
-
-
   const submitForm = useCallback(async () => {
     try {
+      if (!message.trim()) {
+        toast.error("Message cannot be empty!");
+        return;
+      }
+
       let response = await axios.post("https://whistlespace-backend.vercel.app/api/user/addmessage", {
         secretKey: SecretCode,
         content: message,
         randomUsername: userName
       });
 
-      console.log(response);
-      toast(response.data.messages);
+      toast.success(response.data.messages);
       setMessages("");
     } catch (error) {
-      console.log(error);
-      toast(error.response.data.messages);
+      console.error(error);
+      toast.error(error?.response?.data?.messages || "An error occurred while sending the message");
     }
   }, [SecretCode, message, userName]);
 
@@ -125,7 +126,18 @@ const UserDashboard = () => {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
         {/* Sidebar */}
         <aside className="w-full md:w-80 bg-white/80 backdrop-blur-xl shadow-2xl border-r border-white/20 flex-shrink-0 flex flex-col justify-between relative overflow-hidden">
