@@ -43,7 +43,7 @@ const UserDashboard = () => {
       });
 
       console.log(response);
-      toast(response.data.messages);
+      toast(response.data.message);
       setMessages("");
     } catch (error) {
       console.log(error);
