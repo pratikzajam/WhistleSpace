@@ -42,7 +42,7 @@ const UserDashboard = () => {
         randomUsername: userName
       });
 
-      console.log(response.data);
+      console.log(response);
       toast(response.data.messages);
       setMessages("");
     } catch (error) {
